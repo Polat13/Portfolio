@@ -3,8 +3,8 @@ import reactIcon from "../assets/icons/react.svg";
 import jsIcon from "../assets/icons/javascript.svg";
 import tailwindIcon from "../assets/icons/tailwindcss.svg";
 import nodeIcon from "../assets/icons/nodedotjs.svg";
-import jqueryIcon from "../assets/icons/jquery.svg";
-import cplusIcon from "../assets/icons/cplusplus.svg";
+import html5 from "../assets/icons/html5.svg";
+import css from "../assets/icons/css.svg";
 import githubIcon from "../assets/icons/github.svg";
 import figmaIcon from "../assets/icons/figma.svg";
 import useTranslate from "../hooks/useTranslate";
@@ -13,12 +13,12 @@ export function About() {
   const { t } = useTranslate();
 
   const skills = [
-    { name: "React", src: reactIcon },
+    { name: "Html5", src: html5 },
+    { name: "Css", src: css },
     { name: "JavaScript", src: jsIcon },
+    { name: "React", src: reactIcon },
     { name: "Tailwind", src: tailwindIcon },
     { name: "Node.js", src: nodeIcon },
-    { name: "jQuery", src: jqueryIcon },
-    { name: "C++", src: cplusIcon },
     { name: "GitHub", src: githubIcon },
     { name: "Figma", src: figmaIcon },
   ];
@@ -28,15 +28,15 @@ export function About() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
         <div className="group relative p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl transition-all hover:bg-white/10 shadow-2xl flex flex-col justify-between">
           <div>
-            <span className="text-gray-400 text-sm font-medium uppercase tracking-wider">
+            <span className="text-gray-400 text-sm font-medium uppercase tracking-wider drop-shadow-[0_0_8px_rgba(0,0,0,0.85)]">
               {t("about", "whoIam")}
             </span>
 
-            <h2 className="text-xl sm:text-2xl font-bold text-white mt-4 mb-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mt-4 mb-4 drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
               {t("about", "my")}
             </h2>
 
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed drop-shadow-[0_0_10px_rgba(0,0,0,0.85)]">
               {t("about", "explanation")}
             </p>
           </div>
@@ -44,7 +44,7 @@ export function About() {
           <div className="mt-8">
             <a 
               href="/path-to-your-cv.pdf" 
-              className="inline-flex items-center text-indigo-400 font-semibold hover:text-indigo-300 transition-colors group"
+              className="inline-flex items-center text-indigo-400 font-semibold hover:text-indigo-300 transition-colors group drop-shadow-[0_0_8px_rgba(0,0,0,0.8)]"
             >
               {t("about", "downloadcv")}
               <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
@@ -52,8 +52,8 @@ export function About() {
           </div>
         </div>
 
-        <div className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl  hover:bg-white/10">
-          <span className="text-gray-400 text-sm font-medium uppercase tracking-wider">
+        <div className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl hover:bg-white/10">
+          <span className="text-gray-400 text-sm font-medium uppercase tracking-wider drop-shadow-[0_0_8px_rgba(0,0,0,0.85)]">
             {t("about", "skills")}
           </span>
       
@@ -61,22 +61,32 @@ export function About() {
             {skills.map((skill, index) => (
               <div 
                 key={index}
-                className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-indigo-500/50 hover:bg-white/10 transition-all duration-300 group"
+                className="
+                  flex flex-col items-center justify-center p-4 
+                  rounded-2xl 
+                  bg-white/10 backdrop-blur-md 
+                  border border-white/30 
+                  hover:bg-white/20 
+                  transition-all duration-300 group
+                "
               >
                 <img 
                   src={skill.src} 
                   alt={skill.name} 
-                  className="w-10 h-10 mb-3 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
-                  style={{ filter: "brightness(0) invert(1)" }} 
+                  className="
+                    w-10 h-10 mb-3 opacity-80 
+                    group-hover:opacity-100 group-hover:scale-110 
+                    transition-all duration-300
+                  "
+                  style={{ filter: 'brightness(0) invert(1)' }} 
                 />
-                <span className="text-[10px] sm:text-xs text-gray-400 font-medium uppercase">
+                <span className="text-[10px] sm:text-xs text-gray-400 font-medium uppercase drop-shadow-[0_0_8px_rgba(0,0,0,0.85)]">
                   {skill.name}
                 </span>
               </div>
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

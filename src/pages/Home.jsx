@@ -16,11 +16,11 @@ export function Home() {
       </div>
 
       <div className="space-y-2">
-        <p className="text-xs sm:text-sm font-medium uppercase tracking-widest text-indigo-300">
+        <p className="text-xs sm:text-sm font-medium uppercase tracking-widest text-indigo-300 drop-shadow-[0_0_6px_rgba(0,0,0,0.9)]">
           {t("home", "frontendDeveloper")}
         </p>
 
-        <p className="max-w-md sm:max-w-xl text-sm sm:text-base text-gray-200 leading-relaxed px-2">
+        <p className="max-w-md sm:max-w-xl text-sm sm:text-base text-gray-200 leading-relaxed px-2 drop-shadow-[0_0_6px_rgba(0,0,0,0.85)]">
           {t("home", "explanation")}
         </p>
       </div>

@@ -85,16 +85,14 @@ export function Contact() {
 
             <a
               href="mailto:polat131513@gmail.com"
-              className="px-13 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 
+              className="px-8 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 md:px-13
               text-white font-semibold shadow-lg shadow-indigo-500/20 
               transition-all active:scale-95 self-end">
               {t("contact", "sendme")}
             </a>
 
           </div>
-
         </div>
-
       </div>
     </section>
   );
